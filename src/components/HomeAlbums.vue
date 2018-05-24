@@ -12,7 +12,7 @@
     </div>
     <ul class='album-wrap'>
         <transition-group name="list" id='one' enter-active-class="animated zoomIn" leave-active-class="animated zoomOut">
-      <li v-for='album in albumFilter' :key='album.img' v-on:click='album.menu = true;album.hideMenu = false'>
+      <li v-for='album in albumFilter' :key='album.img' v-on:click='removeMenu();album.menu = true;album.hideMenu = false'>
         <div class='view view-first'><img class="albumListImg" :src="album.img" alt="">
         <div class="mask">
       <h2>{{album.name}}</h2>
@@ -99,6 +99,15 @@ export default {
     // }
   },
   methods:{
+    removeMenu: function(){
+      for (var i = 0; i < this.albums.length; i++) {
+        this.albums[i].menu = false;
+        this.albums[i].hideMenu = true;
+        console.log(this.albums[i]);
+      }
+      this.albums.menu = true;
+      this.albums.hideMenu = false;
+    }
  }
 }
 
