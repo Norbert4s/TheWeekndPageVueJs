@@ -8,6 +8,8 @@ import './../node_modules/bootstrap/dist/js/bootstrap.min.js';
 // import velocity  from '@/assets/velocity/velocity.min.js';
 import VueYoutube from 'vue-youtube'
 
+// Vue.use(jquery)
+
 var VueScrollTo = require('vue-scrollto');
 
 // Vue.use(VueScrollTo)
